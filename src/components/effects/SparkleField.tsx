@@ -14,15 +14,27 @@ type Sparkle = {
   duration: number;
 };
 
-const MAX_SPARKLES = 12;
-const INITIAL_COUNT = 10;
+interface SparkleFieldProps {
+  count?: number;
+  className?: string;
+  spawnInterval?: [number, number];
+  sizeRange?: [number, number];
+}
 
-export function SparkleField() {
+export function SparkleField({
+  count = 12,
+  className = "fixed inset-0 pointer-events-none overflow-hidden",
+  spawnInterval = [500, 800],
+  sizeRange = [10, 24],
+}: SparkleFieldProps = {}) {
   const [sparkles, setSparkles] = useState<Sparkle[]>([]);
   const nextId = useRef(0);
 
   useEffect(() => {
     const timeouts = new Set<ReturnType<typeof setTimeout>>();
+    const [minSize, maxSize] = sizeRange;
+    const [minDelay, maxDelay] = spawnInterval;
+    const initialCount = Math.max(1, Math.floor(count * 0.8));
 
     const spawn = () => {
       const id = nextId.current++;
@@ -31,16 +43,14 @@ export function SparkleField() {
         id,
         x: Math.random() * 100,
         y: Math.random() * 100,
-        size: 10 + Math.random() * 14,
+        size: minSize + Math.random() * (maxSize - minSize),
         color: Math.random() < 0.5 ? "#c084fc" : "#ffffff",
         shape: Math.random() < 0.5 ? "plus" : "star",
         duration,
       };
       setSparkles((prev) => {
         const trimmed =
-          prev.length >= MAX_SPARKLES
-            ? prev.slice(prev.length - MAX_SPARKLES + 1)
-            : prev;
+          prev.length >= count ? prev.slice(prev.length - count + 1) : prev;
         return [...trimmed, sparkle];
       });
 
@@ -51,18 +61,18 @@ export function SparkleField() {
       timeouts.add(cleanup);
     };
 
-    for (let i = 0; i < INITIAL_COUNT; i++) {
+    for (let i = 0; i < initialCount; i++) {
       const t = setTimeout(spawn, i * 220);
       timeouts.add(t);
     }
 
-    let loopId: ReturnType<typeof setTimeout>;
     const schedule = () => {
-      loopId = setTimeout(() => {
+      const delay = minDelay + Math.random() * (maxDelay - minDelay);
+      const t = setTimeout(() => {
         spawn();
         schedule();
-      }, 500 + Math.random() * 300);
-      timeouts.add(loopId);
+      }, delay);
+      timeouts.add(t);
     };
     schedule();
 
@@ -70,14 +80,10 @@ export function SparkleField() {
       timeouts.forEach(clearTimeout);
       timeouts.clear();
     };
-  }, []);
+  }, [count, spawnInterval, sizeRange]);
 
   return (
-    <div
-      aria-hidden="true"
-      className="fixed inset-0 pointer-events-none overflow-hidden"
-      style={{ zIndex: 0 }}
-    >
+    <div aria-hidden="true" className={className} style={{ zIndex: 0 }}>
       {sparkles.map((s) => (
         <span
           key={s.id}
