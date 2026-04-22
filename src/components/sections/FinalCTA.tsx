@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useRef, useState } from "react";
 import { SparkleField } from "@/components/effects/SparkleField";
+import { Magnetic } from "@/components/ui/Magnetic";
 import { Pill } from "@/components/ui/Pill";
 import { cn } from "@/lib/utils";
 
@@ -72,32 +73,34 @@ export function FinalCTA() {
           </p>
 
           <div className="pt-3">
-            <motion.button
-              type="button"
-              onMouseEnter={() => setHovered(true)}
-              onMouseLeave={() => setHovered(false)}
-              whileTap={{ scale: 0.97 }}
-              className="group relative inline-flex"
-            >
-              <span
-                aria-hidden="true"
-                className={cn(
-                  "absolute inset-0 rounded-full blur-2xl transition-opacity duration-500 bg-gradient-primary",
-                  hovered ? "opacity-80" : "opacity-40"
-                )}
-              />
-              <span
-                className={cn(
-                  "relative inline-flex items-center gap-2 rounded-full bg-gradient-primary text-white",
-                  "px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg font-medium tracking-tight cursor-pointer",
-                  "transition-all duration-300 ease-out shadow-glow-md",
-                  hovered && "shadow-glow-lg scale-[1.03]"
-                )}
+            <Magnetic maxOffset={14}>
+              <motion.button
+                type="button"
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+                whileTap={{ scale: 0.97 }}
+                className="group relative inline-flex"
               >
-                Book Your Call
-                <ArrowUpRight className="w-5 h-5" />
-              </span>
-            </motion.button>
+                <span
+                  aria-hidden="true"
+                  className={cn(
+                    "absolute inset-0 rounded-full blur-2xl transition-opacity duration-500 bg-gradient-primary",
+                    hovered ? "opacity-80" : "opacity-40"
+                  )}
+                />
+                <span
+                  className={cn(
+                    "relative inline-flex items-center gap-2 rounded-full bg-gradient-primary text-white",
+                    "px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg font-medium tracking-tight cursor-pointer",
+                    "transition-all duration-300 ease-out shadow-glow-md",
+                    hovered && "shadow-glow-lg scale-[1.03]"
+                  )}
+                >
+                  Book Your Call
+                  <ArrowUpRight className="w-5 h-5" />
+                </span>
+              </motion.button>
+            </Magnetic>
           </div>
         </motion.div>
       </div>

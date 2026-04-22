@@ -4,7 +4,9 @@ import { motion, type Variants } from "framer-motion";
 import { ArrowUpRight, Play } from "lucide-react";
 import { SparkleField } from "@/components/effects/SparkleField";
 import { Button } from "@/components/ui/Button";
+import { Magnetic } from "@/components/ui/Magnetic";
 import { Pill } from "@/components/ui/Pill";
+import { ScrambleText } from "@/components/ui/ScrambleText";
 
 const container: Variants = {
   hidden: {},
@@ -52,8 +54,10 @@ export function HeroOffer() {
           variants={item}
           className="relative z-10 font-display font-semibold tracking-tight text-gradient text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.02]"
         >
-          Your Story. Edited Into{" "}
-          <span className="whitespace-nowrap">Something Unforgettable.</span>
+          <ScrambleText
+            text="Your Story. Edited Into Something Unforgettable."
+            duration={900}
+          />
         </motion.h1>
 
         <motion.p
@@ -68,10 +72,12 @@ export function HeroOffer() {
           variants={item}
           className="relative z-10 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-2"
         >
-          <Button size="lg" variant="primary" className="gap-2">
-            Book a Call
-            <ArrowUpRight className="w-5 h-5" />
-          </Button>
+          <Magnetic>
+            <Button size="lg" variant="primary" className="gap-2">
+              Book a Call
+              <ArrowUpRight className="w-5 h-5" />
+            </Button>
+          </Magnetic>
           <Button size="lg" variant="secondary" className="gap-2">
             <Play className="w-4 h-4 fill-white" />
             Watch Reel

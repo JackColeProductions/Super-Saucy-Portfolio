@@ -2,11 +2,17 @@
 
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+
+const TRAIL_EMIT_INTERVAL = 28;
+const TRAIL_PARTICLE_LIFE = 780;
 
 export function VSLPlayer() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const trailRef = useRef<HTMLDivElement>(null);
+  const lastEmit = useRef(0);
   const [playing, setPlaying] = useState(false);
   const [hovered, setHovered] = useState(false);
 
@@ -18,6 +24,47 @@ export function VSLPlayer() {
       setPlaying(false);
     });
   };
+
+  useEffect(() => {
+    const card = cardRef.current;
+    const trail = trailRef.current;
+    if (!card || !trail) return;
+    if (typeof window === "undefined") return;
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
+    if (reducedMotion || coarsePointer) return;
+
+    const handleMove = (e: MouseEvent) => {
+      const now = performance.now();
+      if (now - lastEmit.current < TRAIL_EMIT_INTERVAL) return;
+      lastEmit.current = now;
+
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const particle = document.createElement("span");
+      particle.className = "vsl-trail-particle";
+      particle.style.left = `${x}px`;
+      particle.style.top = `${y}px`;
+      const scale = 0.7 + Math.random() * 0.8;
+      particle.style.setProperty("--trail-scale", scale.toString());
+      particle.style.transform = `translate3d(-50%, -50%, 0) scale(${scale})`;
+      trail.appendChild(particle);
+
+      window.setTimeout(() => {
+        particle.remove();
+      }, TRAIL_PARTICLE_LIFE);
+    };
+
+    card.addEventListener("mousemove", handleMove, { passive: true });
+    return () => {
+      card.removeEventListener("mousemove", handleMove);
+    };
+  }, []);
 
   return (
     <section
@@ -37,6 +84,7 @@ export function VSLPlayer() {
         />
 
         <div
+          ref={cardRef}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           className={cn(
@@ -100,6 +148,12 @@ export function VSLPlayer() {
               </span>
             </button>
           )}
+
+          <div
+            ref={trailRef}
+            aria-hidden="true"
+            className="absolute inset-0 pointer-events-none overflow-hidden"
+          />
         </div>
       </motion.div>
     </section>

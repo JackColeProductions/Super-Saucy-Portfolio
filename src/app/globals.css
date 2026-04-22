@@ -171,3 +171,78 @@ html {
   animation: play-ring 1.8s ease-out infinite;
   will-change: transform, opacity;
 }
+
+@keyframes marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee-track {
+  animation: marquee-scroll 40s linear infinite;
+  will-change: transform;
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.scramble-purple {
+  background: linear-gradient(
+    135deg,
+    #c084fc 0%,
+    #a855f7 60%,
+    #c026d3 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+.vsl-trail-particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(192, 132, 252, 0.85) 0%,
+    rgba(168, 85, 247, 0.4) 40%,
+    rgba(168, 85, 247, 0) 70%
+  );
+  pointer-events: none;
+  transform: translate3d(-50%, -50%, 0);
+  animation: trail-fade 750ms ease-out forwards;
+  will-change: transform, opacity;
+  mix-blend-mode: screen;
+}
+
+@keyframes trail-fade {
+  from {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(0.35);
+  }
+}
+
+@keyframes veil-lift {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.page-veil {
+  animation: veil-lift 500ms ease-out 60ms forwards;
+  will-change: opacity;
+}

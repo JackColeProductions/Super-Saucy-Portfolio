@@ -1,4 +1,5 @@
 import { CaseStudy } from "@/components/sections/CaseStudy";
+import { ClientMarquee } from "@/components/sections/ClientMarquee";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/sections/Footer";
@@ -15,6 +16,7 @@ export default function Home() {
       <main className="flex flex-col">
         <HeroOffer />
         <VSLPlayer />
+        <ClientMarquee />
         <Testimonials />
         <CaseStudy />
         <VideoExamples />

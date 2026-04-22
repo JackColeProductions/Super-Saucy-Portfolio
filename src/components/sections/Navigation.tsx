@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-
 import { ArrowUpRight, Menu, Sparkles, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { Magnetic } from "@/components/ui/Magnetic";
 import { cn } from "@/lib/utils";
 
 const LINKS = [
@@ -73,10 +74,12 @@ export function Navigation() {
           </motion.nav>
 
           <div className="hidden sm:block">
-            <Button size="sm" className="gap-1.5">
-              Book a Call
-              <ArrowUpRight className="w-4 h-4" />
-            </Button>
+            <Magnetic maxOffset={8}>
+              <Button size="sm" className="gap-1.5">
+                Book a Call
+                <ArrowUpRight className="w-4 h-4" />
+              </Button>
+            </Magnetic>
           </div>
         </div>
       </motion.header>

@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Plus } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { Magnetic } from "@/components/ui/Magnetic";
 import { Pill } from "@/components/ui/Pill";
 import { cn } from "@/lib/utils";
 
@@ -64,10 +65,12 @@ export function FAQ() {
             Everything you need to know before we hop on a call.
           </p>
           <div className="pt-2">
-            <Button size="lg" className="gap-2">
-              Get in Touch
-              <ArrowUpRight className="w-5 h-5" />
-            </Button>
+            <Magnetic>
+              <Button size="lg" className="gap-2">
+                Get in Touch
+                <ArrowUpRight className="w-5 h-5" />
+              </Button>
+            </Magnetic>
           </div>
         </motion.div>
 

@@ -4,12 +4,31 @@ import { motion, type Variants } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { CountUp } from "@/components/ui/CountUp";
 import { Pill } from "@/components/ui/Pill";
 
-const METRICS = [
-  { value: "340%", label: "Engagement increase" },
-  { value: "12M+", label: "Views generated" },
-  { value: "48hr", label: "Avg. turnaround" },
+type Metric = {
+  to: number;
+  format: (value: number) => string;
+  label: string;
+};
+
+const METRICS: Metric[] = [
+  {
+    to: 340,
+    format: (v) => `${Math.round(v)}%`,
+    label: "Engagement increase",
+  },
+  {
+    to: 12,
+    format: (v) => `${v.toFixed(v >= 10 ? 0 : 1)}M+`,
+    label: "Views generated",
+  },
+  {
+    to: 48,
+    format: (v) => `${Math.round(v)}hr`,
+    label: "Avg. turnaround",
+  },
 ];
 
 const item: Variants = {
@@ -144,9 +163,11 @@ export function CaseStudy() {
                   key={metric.label}
                   className="px-3 py-5 sm:px-5 sm:py-6 text-center flex flex-col gap-1"
                 >
-                  <span className="font-display font-semibold text-3xl sm:text-4xl text-gradient leading-none">
-                    {metric.value}
-                  </span>
+                  <CountUp
+                    to={metric.to}
+                    format={metric.format}
+                    className="font-display font-semibold text-3xl sm:text-4xl text-gradient leading-none tabular-nums"
+                  />
                   <span className="text-[11px] sm:text-xs text-text-muted leading-snug">
                     {metric.label}
                   </span>
