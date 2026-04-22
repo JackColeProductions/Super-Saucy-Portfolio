@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -19,8 +20,17 @@ export function VSLPlayer() {
   };
 
   return (
-    <section className="relative px-6 pb-32 flex justify-center">
-      <div className="relative w-full max-w-[1000px]">
+    <section
+      id="vsl"
+      className="relative px-6 pb-16 sm:pb-24 md:pb-32 flex justify-center"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-120px" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        className="relative w-full max-w-[1000px]"
+      >
         <div
           aria-hidden="true"
           className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 w-[85%] h-[60%] rounded-[50%] bg-primary/40 blur-3xl pointer-events-none"
@@ -30,7 +40,7 @@ export function VSLPlayer() {
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           className={cn(
-            "relative rounded-3xl overflow-hidden bg-surface-elevated",
+            "relative rounded-3xl overflow-hidden bg-surface-elevated cursor-pointer",
             "vsl-border-pulse transition-transform duration-500 ease-out",
             hovered && "scale-[1.01]"
           )}
@@ -53,7 +63,7 @@ export function VSLPlayer() {
               type="button"
               onClick={handlePlay}
               aria-label="Play sales letter"
-              className="absolute inset-0 flex items-center justify-center group focus-visible:outline-none"
+              className="absolute inset-0 flex items-center justify-center group focus-visible:outline-none cursor-pointer"
             >
               <div
                 aria-hidden="true"
@@ -91,7 +101,7 @@ export function VSLPlayer() {
             </button>
           )}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

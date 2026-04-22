@@ -31,6 +31,13 @@ export function SparkleField({
   const nextId = useRef(0);
 
   useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
     const timeouts = new Set<ReturnType<typeof setTimeout>>();
     const [minSize, maxSize] = sizeRange;
     const [minDelay, maxDelay] = spawnInterval;

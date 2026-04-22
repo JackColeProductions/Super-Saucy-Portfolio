@@ -25,8 +25,8 @@ const config: Config = {
         accent: "#c026d3",
         text: {
           primary: "#ffffff",
-          secondary: "rgba(255,255,255,0.7)",
-          muted: "rgba(255,255,255,0.5)",
+          secondary: "rgba(255,255,255,0.72)",
+          muted: "rgba(255,255,255,0.6)",
         },
       },
       fontFamily: {

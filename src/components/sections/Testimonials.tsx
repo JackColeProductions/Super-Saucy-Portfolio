@@ -54,7 +54,7 @@ const item: Variants = {
 
 export function Testimonials() {
   return (
-    <section id="work" className="relative px-6 py-24 flex justify-center">
+    <section id="testimonials" className="relative px-6 py-16 sm:py-24 flex justify-center">
       <div className="w-full max-w-6xl flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

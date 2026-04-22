@@ -14,6 +14,7 @@ export function MouseRipple() {
 
   useEffect(() => {
     if (window.matchMedia("(pointer: coarse)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const el = rippleRef.current;
     if (!el) return;

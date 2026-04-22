@@ -29,7 +29,7 @@ export function HeroOffer() {
   return (
     <section
       id="top"
-      className="relative pt-36 sm:pt-44 pb-24 px-6 flex justify-center"
+      className="relative pt-32 sm:pt-40 md:pt-44 pb-16 sm:pb-24 px-6 flex justify-center"
     >
       <motion.div
         variants={container}

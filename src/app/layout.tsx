@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { BackgroundLayer } from "@/components/effects/BackgroundLayer";
 import "./globals.css";
@@ -15,10 +15,52 @@ const display = Space_Grotesk({
   display: "swap",
 });
 
+const SITE_URL = "https://yourname.com";
+const TITLE = "YOUR NAME — Video Editor";
+const DESCRIPTION =
+  "Premium video editing for creators, founders, and agencies who want to stop losing viewers in the first 3 seconds.";
+
 export const metadata: Metadata = {
-  title: "YOUR NAME — Video Editor",
-  description:
-    "Premium video editing for creators, brands, and storytellers who refuse to blend in.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: TITLE,
+    template: "%s · YOUR NAME",
+  },
+  description: DESCRIPTION,
+  applicationName: "YOUR NAME",
+  authors: [{ name: "YOUR NAME" }],
+  creator: "YOUR NAME",
+  keywords: [
+    "video editor",
+    "video editing",
+    "YouTube editor",
+    "short-form editing",
+    "creator editor",
+    "brand video",
+  ],
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    title: TITLE,
+    description: DESCRIPTION,
+    siteName: "YOUR NAME",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    creator: "@yourname",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0a0612",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({

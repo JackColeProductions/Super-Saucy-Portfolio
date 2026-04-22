@@ -30,7 +30,7 @@ export function CaseStudy() {
   return (
     <section
       id="process"
-      className="relative px-6 py-24 sm:py-32 flex justify-center"
+      className="relative px-6 py-16 sm:py-24 md:py-32 flex justify-center"
     >
       <div className="w-full max-w-6xl flex flex-col gap-14">
         <motion.div
