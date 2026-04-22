@@ -2,10 +2,13 @@
 
 import { motion, type Variants } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { FilmGrain } from "@/components/effects/FilmGrain";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { CountUp } from "@/components/ui/CountUp";
 import { Pill } from "@/components/ui/Pill";
+
+const CASE_STUDY_VIDEO_ID = "1QKcqn6l4J-uyiSyMMzOCM5HLk0b5Cjue";
 
 type Metric = {
   to: number;
@@ -79,39 +82,25 @@ export function CaseStudy() {
             />
 
             <div
-              className="relative rounded-3xl overflow-hidden border border-white/10 bg-surface-elevated shadow-glow-md"
+              className="relative rounded-3xl overflow-hidden border border-white/10 bg-black shadow-glow-md"
               style={{ aspectRatio: "4 / 5" }}
             >
-              <div
-                aria-hidden="true"
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #2a1050 0%, #7c3aed 45%, #c026d3 100%)",
-                }}
+              <iframe
+                title="Case study video"
+                src={`https://drive.google.com/file/d/${CASE_STUDY_VIDEO_ID}/preview`}
+                className="absolute inset-0 w-full h-full"
+                style={{ border: "none" }}
+                allow="autoplay; fullscreen"
+                loading="lazy"
               />
 
-              <video
-                className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-80"
-                src="/videos/case-study.mp4"
-                poster="/images/case-study-poster.jpg"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
+              <FilmGrain
+                opacity={0.1}
+                blendMode="overlay"
+                className="z-20"
               />
 
-              <div
-                aria-hidden="true"
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(10,6,18,0.0) 50%, rgba(10,6,18,0.85) 100%)",
-                }}
-              />
-
-              <div className="absolute top-4 left-4">
+              <div className="absolute top-4 left-4 z-30 pointer-events-none">
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/60 backdrop-blur-md border border-white/10 text-[10px] font-medium uppercase tracking-[0.2em] text-primary-light">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary-light shadow-glow-sm" />
                   Case Study

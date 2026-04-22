@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { FilmGrain } from "@/components/effects/FilmGrain";
 import { cn } from "@/lib/utils";
 
 const TRAIL_EMIT_INTERVAL = 28;
@@ -153,6 +154,12 @@ export function VSLPlayer() {
             ref={trailRef}
             aria-hidden="true"
             className="absolute inset-0 pointer-events-none overflow-hidden"
+          />
+
+          <FilmGrain
+            opacity={playing ? 0.06 : 0.12}
+            blendMode="overlay"
+            className="z-30"
           />
         </div>
       </motion.div>

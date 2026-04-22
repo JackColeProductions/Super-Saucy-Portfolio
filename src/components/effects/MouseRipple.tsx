@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-const SIZE = 400;
+const SIZE = 320;
 const LERP = 0.14;
 
 export function MouseRipple() {
@@ -26,7 +26,7 @@ export function MouseRipple() {
         current.current.x = e.clientX;
         current.current.y = e.clientY;
         hasPointer.current = true;
-        el.style.opacity = "1";
+        el.style.opacity = "0.7";
       }
     };
 
@@ -67,7 +67,7 @@ export function MouseRipple() {
         opacity: 0,
         transition: "opacity 300ms ease-out",
         background:
-          "radial-gradient(circle, rgba(168,85,247,0.35) 0%, rgba(168,85,247,0.18) 32%, rgba(168,85,247,0) 70%)",
+          "radial-gradient(circle, rgba(168,85,247,0.16) 0%, rgba(168,85,247,0.07) 38%, rgba(168,85,247,0) 72%)",
         mixBlendMode: "screen",
         willChange: "transform, opacity",
         transform: "translate3d(-9999px, -9999px, 0)",

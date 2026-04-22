@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useRef, useState } from "react";
+import { FilmGrain } from "@/components/effects/FilmGrain";
 import { SparkleField } from "@/components/effects/SparkleField";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { Pill } from "@/components/ui/Pill";
@@ -53,6 +54,8 @@ export function FinalCTA() {
           sizeRange={[8, 18]}
           className="absolute inset-0 pointer-events-none overflow-hidden"
         />
+
+        <FilmGrain opacity={0.18} blendMode="overlay" />
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}

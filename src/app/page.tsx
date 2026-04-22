@@ -1,6 +1,6 @@
+import { BookCall } from "@/components/sections/BookCall";
 import { CaseStudy } from "@/components/sections/CaseStudy";
 import { ClientMarquee } from "@/components/sections/ClientMarquee";
-import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/sections/Footer";
 import { HeroOffer } from "@/components/sections/HeroOffer";
@@ -20,7 +20,7 @@ export default function Home() {
         <Testimonials />
         <CaseStudy />
         <VideoExamples />
-        <FAQ />
+        <BookCall />
         <FinalCTA />
       </main>
       <Footer />
