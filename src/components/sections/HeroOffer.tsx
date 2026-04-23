@@ -32,14 +32,14 @@ export function HeroOffer() {
   return (
     <section
       id="top"
-      className="relative pt-32 sm:pt-40 md:pt-44 pb-16 sm:pb-24 px-6 flex justify-center overflow-hidden"
+      className="relative pt-24 sm:pt-28 md:pt-32 pb-4 sm:pb-6 px-6 flex justify-center overflow-hidden"
     >
       <FilmGrain opacity={0.06} blendMode="overlay" />
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative max-w-4xl w-full text-center flex flex-col items-center gap-8"
+        className="relative max-w-5xl w-full text-center flex flex-col items-center gap-4 sm:gap-5"
       >
         <SparkleField
           count={18}
@@ -54,7 +54,7 @@ export function HeroOffer() {
 
         <motion.h1
           variants={item}
-          className="relative z-10 font-display font-semibold tracking-tight text-gradient text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.02]"
+          className="relative z-10 font-display font-semibold tracking-tight text-gradient text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] leading-[1.05] max-w-4xl"
         >
           <ScrambleText
             text="Your Story. Edited Into Something Unforgettable."
@@ -64,7 +64,7 @@ export function HeroOffer() {
 
         <motion.p
           variants={item}
-          className="relative z-10 max-w-2xl text-base sm:text-lg text-text-secondary leading-relaxed"
+          className="relative z-10 max-w-xl text-sm sm:text-base text-text-secondary leading-relaxed"
         >
           Premium video editing for creators, founders, and agencies who want
           to stop losing viewers in the first 3 seconds.
@@ -72,15 +72,15 @@ export function HeroOffer() {
 
         <motion.div
           variants={item}
-          className="relative z-10 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-2"
+          className="relative z-10 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-1"
         >
           <Magnetic>
-            <Button size="lg" variant="primary" className="gap-2">
+            <Button size="md" variant="primary" className="gap-2">
               Book a Call
-              <ArrowUpRight className="w-5 h-5" />
+              <ArrowUpRight className="w-4 h-4" />
             </Button>
           </Magnetic>
-          <Button size="lg" variant="secondary" className="gap-2">
+          <Button size="md" variant="secondary" className="gap-2">
             <Play className="w-4 h-4 fill-white" />
             Watch Reel
           </Button>

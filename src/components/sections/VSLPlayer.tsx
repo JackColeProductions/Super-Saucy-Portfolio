@@ -70,14 +70,14 @@ export function VSLPlayer() {
   return (
     <section
       id="vsl"
-      className="relative px-6 pb-16 sm:pb-24 md:pb-32 flex justify-center"
+      className="relative px-6 pt-2 pb-12 sm:pb-16 md:pb-20 flex justify-center"
     >
       <motion.div
-        initial={{ opacity: 0, y: 32 }}
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-120px" }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="relative w-full max-w-[1000px]"
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        className="relative w-full max-w-[860px]"
       >
         <div
           aria-hidden="true"
