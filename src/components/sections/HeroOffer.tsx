@@ -1,10 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { ArrowUpRight, Play } from "lucide-react";
 import { SparkleField } from "@/components/effects/SparkleField";
-import { Button } from "@/components/ui/Button";
-import { Magnetic } from "@/components/ui/Magnetic";
 import { Pill } from "@/components/ui/Pill";
 
 const container: Variants = {
@@ -64,22 +61,6 @@ export function HeroOffer() {
           lead-generating machines &mdash; with less than one hour of your
           time per week.
         </motion.p>
-
-        <motion.div
-          variants={item}
-          className="relative z-10 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-1"
-        >
-          <Magnetic>
-            <Button size="md" variant="primary" className="gap-2">
-              Book a Call
-              <ArrowUpRight className="w-4 h-4" />
-            </Button>
-          </Magnetic>
-          <Button size="md" variant="secondary" className="gap-2">
-            <Play className="w-4 h-4 fill-white" />
-            Watch Reel
-          </Button>
-        </motion.div>
       </motion.div>
     </section>
   );
