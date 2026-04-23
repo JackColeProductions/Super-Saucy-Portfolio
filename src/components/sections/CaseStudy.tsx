@@ -64,7 +64,7 @@ export function CaseStudy() {
         >
           <Pill>CASE STUDY</Pill>
           <h2 className="font-display font-semibold text-4xl sm:text-5xl tracking-tight text-gradient leading-[1.05] max-w-3xl">
-            How We Turned [Client]&apos;s Channel Into a Lead Magnet
+            How We Turned Sam&apos;s Channel Into a Lead Magnet
           </h2>
         </motion.div>
 

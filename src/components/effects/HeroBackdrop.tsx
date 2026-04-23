@@ -1,11 +1,11 @@
 const GRID_MASK =
-  "radial-gradient(ellipse 90% 50% at 50% 22%, #000 0%, rgba(0,0,0,0.92) 28%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.22) 75%, transparent 94%)";
+  "radial-gradient(ellipse 95% 55% at 50% 20%, #000 0%, rgba(0,0,0,0.9) 24%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0.3) 65%, rgba(0,0,0,0.12) 82%, transparent 100%)";
 
 export function HeroBackdrop() {
   return (
     <div
       aria-hidden="true"
-      className="absolute inset-x-0 top-0 h-[118vh] pointer-events-none"
+      className="absolute inset-x-0 top-0 h-[130vh] pointer-events-none"
     >
       <div
         className="absolute inset-0"
@@ -25,7 +25,7 @@ export function HeroBackdrop() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 78% 40% at 50% 20%, rgba(168, 85, 247, 0.32) 0%, rgba(168, 85, 247, 0.13) 38%, transparent 74%)",
+            "radial-gradient(ellipse 80% 45% at 50% 18%, rgba(168, 85, 247, 0.30) 0%, rgba(168, 85, 247, 0.12) 35%, rgba(168, 85, 247, 0.04) 60%, transparent 85%)",
         }}
       />
 
@@ -33,15 +33,7 @@ export function HeroBackdrop() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 46% 20% at 50% 15%, rgba(192, 132, 252, 0.22) 0%, transparent 65%)",
-        }}
-      />
-
-      <div
-        className="absolute inset-x-0 bottom-0 h-[38%]"
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent 0%, rgba(10, 6, 18, 0.45) 55%, #0a0612 100%)",
+            "radial-gradient(ellipse 48% 22% at 50% 14%, rgba(192, 132, 252, 0.22) 0%, rgba(192, 132, 252, 0.06) 45%, transparent 75%)",
         }}
       />
     </div>
