@@ -46,22 +46,23 @@ export function HeroOffer() {
         />
 
         <motion.div variants={item} className="relative z-10">
-          <Pill>VIDEO EDITING FOR CREATORS</Pill>
+          <Pill>YOUTUBE CONTENT SPRINT</Pill>
         </motion.div>
 
         <motion.h1
           variants={item}
           className="relative z-10 font-display font-semibold tracking-tight text-gradient text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] leading-[1.05] max-w-4xl"
         >
-          Your Story. Edited Into Something Unforgettable.
+          Build a Search Monopoly. Dominate Your Niche.
         </motion.h1>
 
         <motion.p
           variants={item}
           className="relative z-10 max-w-xl text-sm sm:text-base text-text-secondary leading-relaxed"
         >
-          Premium video editing for creators, founders, and agencies who want
-          to stop losing viewers in the first 3 seconds.
+          We help industry experts turn underperforming YouTube channels into
+          lead-generating machines &mdash; with less than one hour of your
+          time per week.
         </motion.p>
 
         <motion.div

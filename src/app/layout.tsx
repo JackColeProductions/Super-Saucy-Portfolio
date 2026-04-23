@@ -17,42 +17,44 @@ const display = Space_Grotesk({
   display: "swap",
 });
 
-const SITE_URL = "https://yourname.com";
-const TITLE = "YOUR NAME — Video Editor";
+const SITE_URL = "https://videoproductionplus.com";
+const TITLE = "Video Production+ — YouTube Content Sprint for Industry Experts";
 const DESCRIPTION =
-  "Premium video editing for creators, founders, and agencies who want to stop losing viewers in the first 3 seconds.";
+  "We help industry experts build a YouTube search monopoly and dominate their niche. Ideation, production, strategy, and systems — fully managed, with less than one hour of your time per week.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: TITLE,
-    template: "%s · YOUR NAME",
+    template: "%s · Video Production+",
   },
   description: DESCRIPTION,
-  applicationName: "YOUR NAME",
-  authors: [{ name: "YOUR NAME" }],
-  creator: "YOUR NAME",
+  applicationName: "Video Production+",
+  authors: [{ name: "Video Production+" }],
+  creator: "Video Production+",
   keywords: [
-    "video editor",
-    "video editing",
-    "YouTube editor",
-    "short-form editing",
-    "creator editor",
-    "brand video",
+    "YouTube content sprint",
+    "YouTube lead generation",
+    "YouTube SEO agency",
+    "YouTube authority",
+    "niche YouTube growth",
+    "video marketing for experts",
+    "industry expert YouTube",
+    "YouTube agency",
   ],
   openGraph: {
     type: "website",
     url: SITE_URL,
     title: TITLE,
     description: DESCRIPTION,
-    siteName: "YOUR NAME",
+    siteName: "Video Production+",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    creator: "@yourname",
+    creator: "@videoproductionplus",
   },
   robots: {
     index: true,

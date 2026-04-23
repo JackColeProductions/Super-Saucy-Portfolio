@@ -13,10 +13,10 @@ import {
 const VIDEOS: VideoExample[] = [
   {
     id: "1",
-    title: "How I Built a 7-Figure Agency in 18 Months",
-    client: "Lumen Studios",
-    views: "2.4M",
-    likes: "148K",
+    title: "The 5 Hidden Fees Destroying Your Portfolio",
+    client: "Cohen Capital",
+    views: "184K",
+    likes: "12K",
     category: "long-form",
     platform: "youtube",
     gradient:
@@ -24,10 +24,10 @@ const VIDEOS: VideoExample[] = [
   },
   {
     id: "2",
-    title: "The hook that 10x'd my retention",
-    client: "@marcus.rivera",
-    views: "980K",
-    likes: "72K",
+    title: "The pricing mistake 9 out of 10 founders make",
+    client: "@adam.advisory",
+    views: "420K",
+    likes: "38K",
     category: "shorts",
     platform: "tiktok",
     gradient:
@@ -35,21 +35,21 @@ const VIDEOS: VideoExample[] = [
   },
   {
     id: "3",
-    title: "Northline — Spring Campaign",
+    title: "Northline — Rebrand Launch Film",
     client: "Northline",
-    views: "5.1M",
-    likes: "210K",
+    views: "1.1M",
+    likes: "62K",
     category: "brand",
-    platform: "instagram",
+    platform: "youtube",
     gradient:
       "linear-gradient(135deg, #1a0833 0%, #7c3aed 40%, #f472b6 100%)",
   },
   {
     id: "4",
-    title: "Why Your First 3 Seconds Decide Everything",
-    client: "Creator Mode",
-    views: "1.3M",
-    likes: "89K",
+    title: "Why This Tax Strategy Beats a Roth IRA Every Time",
+    client: "Harper Wealth",
+    views: "96K",
+    likes: "8.4K",
     category: "long-form",
     platform: "youtube",
     gradient:
@@ -57,10 +57,10 @@ const VIDEOS: VideoExample[] = [
   },
   {
     id: "5",
-    title: "POV: your editor actually understands the script",
-    client: "@priya.n",
-    views: "3.6M",
-    likes: "412K",
+    title: "One trust clause that saved our client $2M",
+    client: "@priya.advisory",
+    views: "610K",
+    likes: "48K",
     category: "shorts",
     platform: "instagram",
     gradient:
@@ -68,10 +68,10 @@ const VIDEOS: VideoExample[] = [
   },
   {
     id: "6",
-    title: "Halo — Product Launch Film",
+    title: "Halo — Inside Our First Product Launch",
     client: "Halo",
-    views: "860K",
-    likes: "54K",
+    views: "220K",
+    likes: "14K",
     category: "brand",
     platform: "youtube",
     gradient:
@@ -125,11 +125,12 @@ export function VideoExamples() {
         >
           <Pill>PORTFOLIO</Pill>
           <h2 className="font-display font-semibold text-4xl sm:text-5xl tracking-tight text-gradient leading-[1.05] max-w-3xl">
-            Work That Moves People
+            Videos That Actually Rank
           </h2>
           <p className="max-w-2xl text-base sm:text-lg text-text-secondary leading-relaxed">
-            A glimpse at recent projects across YouTube, short-form, and
-            brand work.
+            A sample of recent Content Sprint videos &mdash; the kind of
+            long-form, shorts, and brand work that turns search traffic into
+            qualified calls.
           </p>
         </motion.div>
 

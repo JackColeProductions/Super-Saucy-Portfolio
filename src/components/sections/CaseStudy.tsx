@@ -20,7 +20,7 @@ const METRICS: Metric[] = [
   {
     to: 340,
     format: (v) => `${Math.round(v)}%`,
-    label: "Engagement increase",
+    label: "Monthly view lift",
   },
   {
     to: 12,
@@ -28,9 +28,9 @@ const METRICS: Metric[] = [
     label: "Views generated",
   },
   {
-    to: 48,
-    format: (v) => `${Math.round(v)}hr`,
-    label: "Avg. turnaround",
+    to: 60,
+    format: (v) => `${Math.round(v)}min`,
+    label: "Your time / week",
   },
 ];
 
@@ -64,7 +64,7 @@ export function CaseStudy() {
         >
           <Pill>CASE STUDY</Pill>
           <h2 className="font-display font-semibold text-4xl sm:text-5xl tracking-tight text-gradient leading-[1.05] max-w-3xl">
-            How We Helped [Client] 10x Their Views
+            How We Turned [Client]&apos;s Channel Into a Lead Magnet
           </h2>
         </motion.div>
 
@@ -119,30 +119,29 @@ export function CaseStudy() {
             </span>
 
             <h3 className="font-display font-semibold text-3xl sm:text-4xl tracking-tight text-white leading-tight">
-              From 2k to 200k followers in 90 days
+              From invisible on YouTube to the #1 authority in their niche
             </h3>
 
             <div className="flex flex-col gap-4 text-text-secondary leading-relaxed">
               <p>
-                When Lumen came to us, their weekly uploads were strong on
-                substance but bleeding viewers in the first ten seconds. We
-                rebuilt their hook formula, tightened pacing across the board,
-                and introduced a signature color treatment that made every
-                thumbnail instantly recognizable in a crowded feed.
+                When Lumen came to us, the channel was spray-and-pray — good
+                videos, no strategy. They were uploading weekly into a niche
+                where nothing was ranking, nothing was converting, and their
+                ideal client had no reason to ever find them in search.
               </p>
               <p>
-                Over the next twelve weeks, we shipped 42 long-form edits, 160
-                shorts, and a full channel rebrand — working inside a
-                48-hour turnaround window so nothing ever went stale. Every
-                cut was reverse-engineered from the moments our analytics
-                flagged as high-drop-off.
+                We started with ideation: mapping undervalued, high-intent
+                topics their competitors were ignoring. Then we took over
+                production end-to-end &mdash; scripting, editing, packaging,
+                SEO &mdash; so every upload landed inside a queue their
+                audience was already searching for.
               </p>
               <p>
-                The compounding effect hit fast. Their subscriber growth
-                doubled inside the first month, their average view duration
-                jumped by 71%, and by day ninety they had crossed 200k
-                followers with a sponsorship pipeline they could finally
-                choose from.
+                By week twelve their videos were ranking #1 for the queries
+                that mattered, their channel was generating qualified inbound
+                every week, and their total time involved in the whole
+                operation had collapsed to under an hour. The compounding
+                effect hasn&apos;t stopped since.
               </p>
             </div>
 

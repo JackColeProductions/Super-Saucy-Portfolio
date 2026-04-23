@@ -31,12 +31,12 @@ export function BookCall() {
         >
           <Pill>BOOK A CALL</Pill>
           <h2 className="font-display font-semibold text-4xl sm:text-5xl tracking-tight text-gradient leading-[1.05] max-w-2xl">
-            Pick a Time That Works for You
+            Book Your Content Sprint Discovery Call
           </h2>
           <p className="text-text-secondary text-base sm:text-lg leading-relaxed max-w-xl">
-            Grab a free 20-minute strategy slot. We&apos;ll talk about your
-            goals, your footage, and what a first month together could look
-            like — no pitch.
+            Grab a free 20-minute call. We&apos;ll map the undervalued topics
+            in your niche, show you what a Content Sprint would look like
+            for your channel, and see if we&apos;re a fit &mdash; no pitch.
           </p>
         </motion.div>
 

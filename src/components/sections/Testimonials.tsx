@@ -15,23 +15,23 @@ type Testimonial = {
 const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "Working with [NAME] transformed our content strategy. Our engagement is up 340% in just two months.",
+      "Our channel finally feels like it has a strategy. The videos we publish now actually bring in leads instead of random views from the wrong people.",
     name: "Sarah Chen",
     role: "Founder @ Lumen Studios",
     avatarGradient: "linear-gradient(135deg, #a855f7 0%, #c026d3 100%)",
   },
   {
     quote:
-      "The edits feel cinematic without ever feeling heavy. Retention on our long-form jumped from 32% to 71%.",
+      "They found topics no one else in our niche was touching. We rank #1 for queries our competitors completely ignored — inbound calls have doubled every month.",
     name: "Marcus Rivera",
-    role: "Creator · 1.2M subscribers",
+    role: "Founder @ Rivera Advisory",
     avatarGradient: "linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)",
   },
   {
     quote:
-      "Every deliverable was sharper than the brief. We shipped a full campaign in half the time we planned.",
+      "I send my script and show up to record. They handle ideation, editing, thumbnails, SEO, the whole stack. I spend less than an hour a week on YouTube now and leads keep coming in.",
     name: "Priya Nakamura",
-    role: "Head of Content @ Northline",
+    role: "Head of Growth @ Northline",
     avatarGradient: "linear-gradient(135deg, #c026d3 0%, #7c3aed 100%)",
   },
 ];
@@ -65,7 +65,7 @@ export function Testimonials() {
         >
           <Pill>WHAT CLIENTS SAY</Pill>
           <h2 className="font-display font-semibold text-4xl sm:text-5xl tracking-tight text-gradient leading-[1.05] max-w-3xl">
-            Results That Speak Louder Than Words
+            The Experts We&apos;ve Put on the Map
           </h2>
         </motion.div>
 

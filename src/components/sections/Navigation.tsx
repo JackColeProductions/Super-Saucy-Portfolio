@@ -141,7 +141,7 @@ function Logo() {
         <Sparkles className="w-4 h-4 text-white" strokeWidth={2.25} />
       </span>
       <span className="hidden sm:inline font-display font-semibold text-sm tracking-tight">
-        YOUR NAME
+        Video Production+
       </span>
     </a>
   );

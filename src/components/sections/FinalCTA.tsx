@@ -67,12 +67,13 @@ export function FinalCTA() {
           <Pill>READY WHEN YOU ARE</Pill>
 
           <h2 className="font-display font-semibold text-4xl sm:text-5xl md:text-6xl tracking-tight text-gradient leading-[1.05] max-w-3xl">
-            Let&apos;s Make Something Unforgettable
+            Ready to Own Your Niche on YouTube?
           </h2>
 
           <p className="text-text-secondary text-base sm:text-lg leading-relaxed max-w-xl">
-            Book a free 20-minute strategy call. No pitch, just a
-            conversation about your vision.
+            Book a free 20-minute Content Sprint discovery call. No pitch
+            &mdash; just a look at the undervalued topics your audience is
+            already searching for.
           </p>
 
           <div className="pt-3">

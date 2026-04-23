@@ -42,11 +42,12 @@ export function Footer() {
                 <Sparkles className="w-4 h-4 text-white" strokeWidth={2.25} />
               </span>
               <span className="font-display font-semibold text-sm tracking-tight text-white">
-                YOUR NAME
+                Video Production+
               </span>
             </a>
             <p className="text-sm text-text-secondary leading-relaxed max-w-xs">
-              Premium video editing for creators who mean business.
+              A YouTube Content Sprint agency helping industry experts
+              build a search monopoly in their niche.
             </p>
           </div>
 
@@ -78,7 +79,7 @@ export function Footer() {
         <div className="h-px w-full bg-white/[0.08]" />
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-text-muted">
-          <span>© 2026 YOUR NAME. All rights reserved.</span>
+          <span>© 2026 Video Production+. All rights reserved.</span>
           <span className="inline-flex items-center gap-1.5">
             Made with
             <Heart
