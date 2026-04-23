@@ -13,67 +13,62 @@ import {
 const VIDEOS: VideoExample[] = [
   {
     id: "1",
-    title: "The 5 Hidden Fees Destroying Your Portfolio",
-    client: "Cohen Capital",
-    views: "184K",
-    likes: "12K",
+    title: "How to Start a Coaching Business Online (7-Figure Blueprint)",
+    client: "Richmond Dinh",
     category: "long-form",
     platform: "youtube",
+    youtubeId: "PTVPb1gntdE",
     gradient:
       "linear-gradient(135deg, #2a1050 0%, #7c3aed 55%, #c026d3 100%)",
   },
   {
     id: "2",
-    title: "The pricing mistake 9 out of 10 founders make",
-    client: "@adam.advisory",
-    views: "420K",
-    likes: "38K",
-    category: "shorts",
-    platform: "tiktok",
+    title: "Six Figure Coaching Business Blueprint (No Ads, No Following)",
+    client: "Richmond Dinh",
+    category: "long-form",
+    platform: "youtube",
+    youtubeId: "ilfZ1jUA2i8",
     gradient:
       "linear-gradient(135deg, #0f0322 0%, #a855f7 50%, #ec4899 100%)",
   },
   {
     id: "3",
-    title: "Northline — Rebrand Launch Film",
-    client: "Northline",
-    views: "1.1M",
-    likes: "62K",
-    category: "brand",
+    title:
+      "I Spent My Last $50K to Figure Out How to Get Clients — Now Sharing This With You For Free",
+    client: "Richmond Dinh",
+    category: "long-form",
     platform: "youtube",
+    youtubeId: "hzkRXCEalUU",
     gradient:
       "linear-gradient(135deg, #1a0833 0%, #7c3aed 40%, #f472b6 100%)",
   },
   {
     id: "4",
-    title: "Why This Tax Strategy Beats a Roth IRA Every Time",
-    client: "Harper Wealth",
-    views: "96K",
-    likes: "8.4K",
+    title: "Will AI Replace Coaches? (4 Elements to Stay Relevant)",
+    client: "Richmond Dinh",
     category: "long-form",
     platform: "youtube",
+    youtubeId: "UxkA7swgCos",
     gradient:
       "linear-gradient(135deg, #140b24 0%, #6d28d9 55%, #a855f7 100%)",
   },
   {
     id: "5",
-    title: "One trust clause that saved our client $2M",
-    client: "@priya.advisory",
-    views: "610K",
-    likes: "48K",
-    category: "shorts",
-    platform: "instagram",
+    title: "Is Starting a Life Coaching Business Worth It? (2026 Strategy)",
+    client: "Richmond Dinh",
+    category: "long-form",
+    platform: "youtube",
+    youtubeId: "beiAUzopIF4",
     gradient:
       "linear-gradient(135deg, #2a0a3d 0%, #be185d 50%, #c026d3 100%)",
   },
   {
     id: "6",
-    title: "Halo — Inside Our First Product Launch",
-    client: "Halo",
-    views: "220K",
-    likes: "14K",
-    category: "brand",
+    title: "Women in Business Coaching | Why They're Winning (3 Patterns)",
+    client: "Richmond Dinh",
+    category: "long-form",
     platform: "youtube",
+    youtubeId: "CgDAWVwBLWw",
     gradient:
       "linear-gradient(135deg, #0a0612 0%, #7c3aed 45%, #22d3ee 100%)",
   },
@@ -113,6 +108,13 @@ export function VideoExamples() {
     [filter]
   );
 
+  const availableFilters = useMemo(() => {
+    const present = new Set(VIDEOS.map((v) => v.category));
+    return FILTERS.filter((f) => f.id === "all" || present.has(f.id));
+  }, []);
+
+  const showFilterBar = availableFilters.length > 2;
+
   return (
     <section id="work" className="relative px-6 py-16 sm:py-24 md:py-32 flex justify-center">
       <div className="w-full max-w-6xl flex flex-col items-center gap-12">
@@ -129,37 +131,38 @@ export function VideoExamples() {
           </h2>
           <p className="max-w-2xl text-base sm:text-lg text-text-secondary leading-relaxed">
             A sample of recent Content Sprint videos &mdash; the kind of
-            long-form, shorts, and brand work that turns search traffic into
-            qualified calls.
+            work that turns search traffic into qualified calls.
           </p>
         </motion.div>
 
-        <div
-          role="tablist"
-          aria-label="Filter portfolio"
-          className="flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-full border border-white/[0.08] bg-surface/40 backdrop-blur-xl"
-        >
-          {FILTERS.map((f) => {
-            const active = filter === f.id;
-            return (
-              <button
-                key={f.id}
-                role="tab"
-                type="button"
-                aria-selected={active}
-                onClick={() => setFilter(f.id)}
-                className={cn(
-                  "px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ease-out",
-                  active
-                    ? "bg-gradient-primary text-white shadow-glow-sm"
-                    : "text-text-secondary hover:text-white hover:bg-white/[0.04]"
-                )}
-              >
-                {f.label}
-              </button>
-            );
-          })}
-        </div>
+        {showFilterBar && (
+          <div
+            role="tablist"
+            aria-label="Filter portfolio"
+            className="flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-full border border-white/[0.08] bg-surface/40 backdrop-blur-xl"
+          >
+            {availableFilters.map((f) => {
+              const active = filter === f.id;
+              return (
+                <button
+                  key={f.id}
+                  role="tab"
+                  type="button"
+                  aria-selected={active}
+                  onClick={() => setFilter(f.id)}
+                  className={cn(
+                    "px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ease-out cursor-pointer",
+                    active
+                      ? "bg-gradient-primary text-white shadow-glow-sm"
+                      : "text-text-secondary hover:text-white hover:bg-white/[0.04]"
+                  )}
+                >
+                  {f.label}
+                </button>
+              );
+            })}
+          </div>
+        )}
 
         <motion.ul
           key={filter}
