@@ -7,7 +7,6 @@ import { SparkleField } from "@/components/effects/SparkleField";
 import { Button } from "@/components/ui/Button";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { Pill } from "@/components/ui/Pill";
-import { ScrambleText } from "@/components/ui/ScrambleText";
 
 const container: Variants = {
   hidden: {},
@@ -56,10 +55,7 @@ export function HeroOffer() {
           variants={item}
           className="relative z-10 font-display font-semibold tracking-tight text-gradient text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] leading-[1.05] max-w-4xl"
         >
-          <ScrambleText
-            text="Your Story. Edited Into Something Unforgettable."
-            duration={900}
-          />
+          Your Story. Edited Into Something Unforgettable.
         </motion.h1>
 
         <motion.p
