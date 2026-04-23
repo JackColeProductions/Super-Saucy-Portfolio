@@ -82,8 +82,8 @@ export function CaseStudy() {
             />
 
             <div
-              className="relative rounded-3xl overflow-hidden border border-white/10 bg-black shadow-glow-md"
-              style={{ aspectRatio: "4 / 5" }}
+              className="relative mx-auto w-full max-w-[420px] rounded-3xl overflow-hidden border border-white/10 bg-black shadow-glow-md"
+              style={{ aspectRatio: "9 / 16" }}
             >
               <iframe
                 title="Case study video"
