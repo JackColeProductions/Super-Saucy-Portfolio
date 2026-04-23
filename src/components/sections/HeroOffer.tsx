@@ -2,7 +2,6 @@
 
 import { motion, type Variants } from "framer-motion";
 import { ArrowUpRight, Play } from "lucide-react";
-import { FilmGrain } from "@/components/effects/FilmGrain";
 import { SparkleField } from "@/components/effects/SparkleField";
 import { Button } from "@/components/ui/Button";
 import { Magnetic } from "@/components/ui/Magnetic";
@@ -31,9 +30,8 @@ export function HeroOffer() {
   return (
     <section
       id="top"
-      className="relative pt-24 sm:pt-28 md:pt-32 pb-4 sm:pb-6 px-6 flex justify-center overflow-hidden"
+      className="relative pt-24 sm:pt-28 md:pt-32 pb-4 sm:pb-6 px-6 flex justify-center"
     >
-      <FilmGrain opacity={0.06} blendMode="overlay" />
       <motion.div
         variants={container}
         initial="hidden"
