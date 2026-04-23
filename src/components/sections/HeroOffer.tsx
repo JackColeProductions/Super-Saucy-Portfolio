@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import { HeroBackdrop } from "@/components/effects/HeroBackdrop";
 import { SparkleField } from "@/components/effects/SparkleField";
 import { Pill } from "@/components/ui/Pill";
 
@@ -29,11 +30,13 @@ export function HeroOffer() {
       id="top"
       className="relative pt-24 sm:pt-28 md:pt-32 pb-4 sm:pb-6 px-6 flex justify-center"
     >
+      <HeroBackdrop />
+
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative max-w-5xl w-full text-center flex flex-col items-center gap-4 sm:gap-5"
+        className="relative z-10 max-w-5xl w-full text-center flex flex-col items-center gap-4 sm:gap-5"
       >
         <SparkleField
           count={18}
